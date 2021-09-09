@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import song from './songs/come_together.json';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import './App.css';
+import Song from "./Song";
+import {BrowserRouter, Route, Router, Switch} from "react-router-dom";
+import SongPart from "./SongPart";
+import Test from "./Test";
 
 export default App;
+
+function App() {
+
+    return (
+        <BrowserRouter>
+            <Switch>
+                <Route path='/'>
+                    <Song song={song}></Song>
+                </Route>
+                <Route path='/part/:index' children={<SongPart />} />
+                <Route path='/test'>
+                    <Test></Test>
+                </Route>
+            </Switch>
+        </BrowserRouter>
+    )
+        ;
+}
