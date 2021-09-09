@@ -1,21 +1,38 @@
 {
   "title": "Come together",
   "artist": "Beatles",
-  "parts": {
-    "1": "Here come old flat top \n He come grooving up slowly",
-    "2": "He got joo joo eyeball \n He one holy roller",
-    "3": "He got hair down to his knee \n Got to be a joker he just do what he please",
-    "4": "He wear no shoe shine \n He got toe jam football",
-    "5": "He got monkey finger \n He shoot Coca-Cola",
-    "6": "He say I know you, you know me",
-    "7": "One thing I can tell you is you got to be free",
-    "8": "Come together, right now, over me",
-    "9": "He bag production \n He got walrus gumboot",
-    "10": "He got Ono sideboard \n He one spinal cracker",
-    "11": "He got feet down below his knee \n Hold you in his armchair you can feel his disease \n Come together, right now, over me",
-    "12": "He roller coaster He got early warning",
-    "13": "He got muddy water He one mojo filter",
-    "14": "He say, \"one and one and one is three\" \n Got to be good looking 'cause he's so hard to see\n Come together, right now, over me",
-    "15": "Come together, yeah\n Come together, yeah"
-  }
+  "parts": [
+    "Here come old flat top \n He come grooving up slowly",
+    "He got joo joo eyeball \n He one holy roller",
+    "He got hair down to his knee \n Got to be a joker he just do what he please",
+    "He wear no shoe shine \n He got toe jam football",
+    "He got monkey finger \n He shoot Coca-Cola",
+    "He say I know you, you know me",
+    "One thing I can tell you is you got to be free",
+    "Come together, right now, over me",
+    "He bag production \n He got walrus gumboot",
+    "He got Ono sideboard \n He one spinal cracker",
+    "He got feet down below his knee \n Hold you in his armchair you can feel his disease \n Come together, right now, over me",
+    "He roller coaster He got early warning",
+    "He got muddy water He one mojo filter",
+    "He say, \"one and one and one is three\" \n Got to be good looking 'cause he's so hard to see\n Come together, right now, over me",
+    "Come together, yeah\n Come together, yeah"
+  ],
+  "snippets": [
+    "001_HereCome.mp3",
+    "002_HeGot.mp3",
+    "003_Hair.mp3",
+    "004_ShoeShine.mp3",
+    "005_MonkeyFinger.mp3",
+    "006_IKnowYou.mp3",
+    "007_OneThing.mp3",
+    "008_Ref_01.mp3",
+    "009_BagProduction.mp3",
+    "010_OnoSidevboard.mp3",
+    "011_FeetDonwBelow.mp3",
+    "012_RollerCoaster.mp3",
+    "013_MuddyWater.mp3",
+    "014_OneAndOne.mp3",
+    "015_ComeTogehterYeah.mp3"
+  ]
 }
