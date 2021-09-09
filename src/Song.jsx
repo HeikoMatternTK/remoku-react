@@ -43,7 +43,7 @@ export default function Song({song}) {
 
     const getPartFilename = () => {
         return listenPart
-            .replaceAll('.wav', '.webm');
+            .replaceAll('.mp3', '.webm');
     }
 
     const axiosConfig = {
@@ -82,11 +82,14 @@ export default function Song({song}) {
                     {parts}
                 </Tbody>
             </Table>*/}
+
                 <h1><span>Co</span>llaborative Re<span color={"red"}>mo</span>te Karao<span color={"red"}>ke</span></h1>
 
                 <img src={'/help.png'}/>
 
                 <p>This is the first <strong>Collaborative Remote Karaoke Tool</strong> of the world! In this app you will be performing a small part of the Beatles song <strong>"Come together"</strong>, which will later be added together automagically! You can first listen to the part you will sing, then commit the lyrics to memory (or read them), and then click the record button (make sure video is enabled), and sing your part! <strong>Don't forget to push the upload button afterwards!!!</strong></p>
+
+                <hr />
 
                 <Box>
                     <h1>Listen to your part</h1>
