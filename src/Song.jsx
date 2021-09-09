@@ -82,6 +82,7 @@ export default function Song({song}) {
             </Table>*/}
                 <h1><span>Co</span>llaborative Re<span color={"red"}>mo</span>te karao<span color={"red"}>ke</span></h1>
 
+                <img src={'/help.png'} />
 
                 <h1>Listen to your part</h1>
                 <audio controls>
@@ -96,11 +97,8 @@ export default function Song({song}) {
                 <VideoRecorder style="width: 500px; height: 500px;"
                                onRecordingComplete={videoBlob => setAndLogVideoBlob(videoBlob)}
                 />
-                <button
-                    hidden={videoBlob === null}
-                    onClick={() => show()}>Show Blob
-                </button>
-                <h1>Upload will be available once you've recorded</h1>
+
+                <h1 hidden={videoBlob !== null}>Upload will be available once you've recorded</h1>
                 <button
                     hidden={videoBlob === null}
                     onClick={() => upload()}><h1>Upload you part!</h1>
