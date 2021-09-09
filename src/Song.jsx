@@ -1,4 +1,4 @@
-import {Button, Flex, Table, Tbody, Td, Th, Thead, Tr} from "@chakra-ui/react";
+import {Button, Flex, Table, Tbody, Td, Th, Thead, Tr, Box} from "@chakra-ui/react";
 import {ReactMediaRecorder} from "react-media-recorder";
 import RecordView from "./RecordView";
 import {useState} from "react";
@@ -14,6 +14,7 @@ export default function Song({song}) {
     const [index, setIndex] = useState(randomChosenPart);
     const [listenPart, setListePart] = useState(song.snippets[randomChosenPart]);
     const [videoBlob, setVideoBlob] = useState(null);
+    const [uploaded, setUploaded] = useState(false);
 
     const setAndLogVideoBlob = (blob) => {
         console.log(blob);
@@ -62,6 +63,7 @@ export default function Song({song}) {
             formData,
             axiosConfig
         );
+        setUploaded(true);
     };
 
     return (
@@ -80,14 +82,18 @@ export default function Song({song}) {
                     {parts}
                 </Tbody>
             </Table>*/}
-                <h1><span>Co</span>llaborative Re<span color={"red"}>mo</span>te karao<span color={"red"}>ke</span></h1>
+                <h1><span>Co</span>llaborative Re<span color={"red"}>mo</span>te Karao<span color={"red"}>ke</span></h1>
 
-                <img src={'/help.png'} />
+                <img src={'/help.png'}/>
 
-                <h1>Listen to your part</h1>
-                <audio controls>
-                    <source src={`/parts/${listenPart}`} type={'audio/mp3'} />
-                </audio>
+                <p>This is the first <strong>Collaborative Remote Karaoke Tool</strong> of the world! In this app you will be performing a small part of the Beatles song <strong>"Come together"</strong>, which will later be added together automagically! You can first listen to the part you will sing, then commit the lyrics to memory (or read them), and then click the record button (make sure video is enabled), and sing your part! <strong>Don't forget to push the upload button afterwards!!!</strong></p>
+
+                <Box>
+                    <h1>Listen to your part</h1>
+                    <audio controls>
+                        <source src={`/parts/${listenPart}`} type={'audio/mp3'}/>
+                    </audio>
+                </Box>
 
                 <h1>Sing your part!</h1>
                 <h2>{part}</h2>
@@ -103,6 +109,10 @@ export default function Song({song}) {
                     hidden={videoBlob === null}
                     onClick={() => upload()}><h1>Upload you part!</h1>
                 </button>
+
+                <h1 hidden={uploaded}>
+                    Thanks for your Upload!
+                </h1>
 
             </Flex>
         </div>)
