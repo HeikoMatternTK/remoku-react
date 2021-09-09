@@ -113,9 +113,7 @@ export default function Song({song}) {
                     onClick={() => upload()}><h1>Upload you part!</h1>
                 </button>
 
-                <h1 hidden={uploaded}>
-                    Thanks for your Upload!
-                </h1>
+                <h1>{uploaded ? 'Thanks for the Upload! It will automagically become mashed together and shown at the Breakout Review Show!' : ''}</h1>
 
             </Flex>
         </div>)
