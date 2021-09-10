@@ -9,3 +9,11 @@
 .shadow {
     box-shadow: rgb(0, 0, 0) 10px 10px 0px 0px;
 }
+
+.red {
+    color: #ea6464;
+}
+
+.hide {
+    display: none;
+}

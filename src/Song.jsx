@@ -14,7 +14,7 @@ export default function Song({song}) {
     const [index, setIndex] = useState(randomChosenPart);
     const [listenPart, setListePart] = useState(song.snippets[randomChosenPart]);
     const [videoBlob, setVideoBlob] = useState(null);
-    const [uploaded, setUploaded] = useState(false);
+    const [uploaded, setUploaded] = useState('not');
 
     const setAndLogVideoBlob = (blob) => {
         console.log(blob);
@@ -58,12 +58,13 @@ export default function Song({song}) {
         formData.append('video', videoBlob);
         formData.append('uploadHash', '34n23lr8b2d9b32o32h2323');
         formData.append('fileName', getPartFilename());
-        setUploaded(true);
+        setUploaded('uploaded');
         const response = await axios.post(
             'https://turbine-kreuzberg.dev',
             formData,
             axiosConfig
         );
+        console.log(response);
     };
 
     return (
@@ -83,8 +84,8 @@ export default function Song({song}) {
                     {parts}
                 </Tbody>
             </Table>*/}
-
-                    <h1><span>Co</span>llaborative Re<span color={"red"}>mo</span>te Karao<span color={"red"}>ke</span>
+                    <h1><span className='red'>Co</span>llaborative Re<span className='red'>mo</span>te Karao<span
+                        className='red'>ke</span>
                     </h1>
 
                     <img src={'/help.png'} className='object-fit-contain'/>
@@ -136,10 +137,14 @@ export default function Song({song}) {
                         </button>
                     </Box>
 
-                    <Box hidden={uploaded} border={'1px solid black'} padding={'2rem'} width={'100%'} display={'flex'}
-                         flexDirection={'column'} alignItems={'center'} className='shadow'>
-                        <h1>Thanks for the Upload! It will automagically become mashed together and shown at the Breakout Review Show!</h1>
-                    </Box>
+                    <div hidden={uploaded == 'not'}>
+                        <Box className={uploaded == 'not' ? 'hide' : ''} border={'1px solid black'} padding={'2rem'}
+                             width={'100%'} display={'flex'}
+                             flexDirection={'column'} alignItems={'center'} className='shadow'>
+                            <h1>Thanks for the Upload! It will automagically become mashed together and shown at the
+                                Breakout Review Show!</h1>
+                        </Box>
+                    </div>
                 </Flex>
             </Flex>
         </div>)
