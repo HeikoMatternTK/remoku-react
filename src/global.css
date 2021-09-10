@@ -1,0 +1,11 @@
+.flex-gap {
+    gap: 2rem;
+}
+
+.object-fit-contain {
+    object-fit: contain;
+}
+
+.shadow {
+    box-shadow: rgb(0, 0, 0) 10px 10px 0px 0px;
+}

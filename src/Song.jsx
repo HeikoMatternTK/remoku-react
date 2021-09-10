@@ -58,18 +58,19 @@ export default function Song({song}) {
         formData.append('video', videoBlob);
         formData.append('uploadHash', '34n23lr8b2d9b32o32h2323');
         formData.append('fileName', getPartFilename());
+        setUploaded(true);
         const response = await axios.post(
             'https://turbine-kreuzberg.dev',
             formData,
             axiosConfig
         );
-        setUploaded(true);
     };
 
     return (
         <div display>
-            <Flex flexDirection={'column'} alignItems={'center'} padding={'5rem'} maxWidth={'50rem'}>
-                {/*<Table variant="simple">
+            <Flex flexDirection={'column'} justifyContent={'center'} alignItems={'center'} padding={'5rem'}>
+                <Flex flexDirection={'column'} justifyContent={'center'} alignItems={'center'} className='flex-gap'>
+                    {/*<Table variant="simple">
                 <Thead>
                     <Tr>
                         <Th>Strophe Number</Th>
@@ -83,38 +84,63 @@ export default function Song({song}) {
                 </Tbody>
             </Table>*/}
 
-                <h1><span>Co</span>llaborative Re<span color={"red"}>mo</span>te Karao<span color={"red"}>ke</span></h1>
+                    <h1><span>Co</span>llaborative Re<span color={"red"}>mo</span>te Karao<span color={"red"}>ke</span>
+                    </h1>
 
-                <img src={'/help.png'}/>
+                    <img src={'/help.png'} className='object-fit-contain'/>
 
-                <p>This is the first <strong>Collaborative Remote Karaoke Tool</strong> of the world! In this app you will be performing a small part of the Beatles song <strong>"Come together"</strong>, which will later be added together automagically! You can first listen to the part you will sing, then commit the lyrics to memory (or read them), and then click the record button (make sure video is enabled), and sing your part! <strong>Don't forget to push the upload button afterwards!!!</strong></p>
+                    <Box border={'1px solid black'} padding={'2rem'} width={'100%'} display={'flex'}
+                         flexDirection={'column'} alignItems={'center'} className='shadow'>
+                        <p>This is the first <strong>Collaborative Remote Karaoke Tool</strong> of the world! In this
+                            app
+                            you will be performing a small part of the Beatles song <strong>"Come together"</strong>,
+                            which
+                            will later be added together automagically! You can first listen to the part you will sing,
+                            then
+                            commit the lyrics to memory (or read them), and then click the record button (make sure
+                            video is
+                            enabled), and sing your part! <strong>Don't forget to push the upload button
+                                afterwards!!!</strong></p>
 
-                <hr />
+                    </Box>
 
-                <Box>
-                    <h1>Listen to your part</h1>
-                    <audio controls>
-                        <source src={`/parts/${listenPart}`} type={'audio/mp3'}/>
-                    </audio>
-                </Box>
+                    <Box border={'1px solid black'} padding={'2rem'} width={'100%'} display={'flex'}
+                         flexDirection={'column'} alignItems={'center'} className='shadow'>
+                        <h1>Listen to your part</h1>
+                        <audio controls>
+                            <source src={`/parts/${listenPart}`} type={'audio/mp3'}/>
+                        </audio>
+                    </Box>
 
-                <h1>Sing your part!</h1>
-                <h2>{part}</h2>
+                    <Box border={'1px solid black'} padding={'2rem'} width={'100%'} display={'flex'}
+                         flexDirection={'column'} alignItems={'center'} className='shadow'>
+                        <h1>Sing your part!</h1>
+                        <h2>{part}</h2>
+                    </Box>
 
-                <h1>Record your part!</h1>
+                    <Box border={'1px solid black'} padding={'2rem'} width={'100%'} display={'flex'}
+                         flexDirection={'column'} alignItems={'center'} className='shadow'>
+                        <h1>Record your part!</h1>
 
-                <VideoRecorder style="width: 500px; height: 500px;"
-                               onRecordingComplete={videoBlob => setAndLogVideoBlob(videoBlob)}
-                />
+                        <VideoRecorder style="width: 500px; height: 500px;"
+                                       onRecordingComplete={videoBlob => setAndLogVideoBlob(videoBlob)}
+                        />
+                    </Box>
 
-                <h1 hidden={videoBlob !== null}>Upload will be available once you've recorded</h1>
-                <button
-                    hidden={videoBlob === null}
-                    onClick={() => upload()}><h1>Upload you part!</h1>
-                </button>
+                    <Box border={'1px solid black'} padding={'2rem'} width={'100%'} display={'flex'}
+                         flexDirection={'column'} alignItems={'center'} className='shadow'>
+                        <h1 hidden={videoBlob !== null}>Upload will be available once you've recorded</h1>
+                        <button
+                            hidden={videoBlob === null}
+                            onClick={() => upload()}><h1>Upload you part!</h1>
+                        </button>
+                    </Box>
 
-                <h1>{uploaded ? 'Thanks for the Upload! It will automagically become mashed together and shown at the Breakout Review Show!' : ''}</h1>
-
+                    <Box hidden={uploaded} border={'1px solid black'} padding={'2rem'} width={'100%'} display={'flex'}
+                         flexDirection={'column'} alignItems={'center'} className='shadow'>
+                        <h1>Thanks for the Upload! It will automagically become mashed together and shown at the Breakout Review Show!</h1>
+                    </Box>
+                </Flex>
             </Flex>
         </div>)
 }
